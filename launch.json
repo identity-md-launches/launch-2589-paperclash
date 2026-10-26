@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "Paperclash",
+    "name": "paperclash",
+    "symbol": "CLASH",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8000,
+    "initialMarketCapWei": "10000000000000000000",
+    "remainderTo": "0x1ee3ffadfe138415a2ddaedeebe5f46616fa413d"
+  },
+  "notes": "Paperclash (src/Paperclash.sol) is a fixed-supply ERC-20 built on the vendored OpenZeppelin v5.0.2 ERC20 with no constructor arguments. Its constructor mints 1,000,000,000 CLASH (1000000000000000000000000000 base units, 18 decimals) once to msg.sender, which is the launch factory, in a single Transfer event. The token has no transfer tax, burn, reflection, rebase, mint authority, owner, pause, blacklist, freeze, upgrade path or external call, so the factory's transfer to the MerkleDistributor, the pool seed through the PoolManager, claims and swaps all move exactly what they say with no exemptions to maintain. Supply can never grow after deployment: the only mint is the constructor's. The requested social link is exposed on-chain through the constant getter SOCIAL_URL(), which returns https://x.com/robobet_fun; the coin page's X/Twitter social field should be set to that exact URL, since ERC-20 has no standard social field. There are no application contracts and no initialization calls. The pool pairs with native ETH at the launch policy's 1.25% fee; the deployer derives the opening price from economics.initialMarketCapWei and totalSupply, and pool.initialPrice is provenance only."
+}
